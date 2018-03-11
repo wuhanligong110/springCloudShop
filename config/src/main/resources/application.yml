@@ -10,19 +10,19 @@ spring:
   application:
     name: 'config'
   rabbitmq:
-    host: 123.207.231.196
+    host: 10.16.0.202
     port: 5672
-    username: cs
-    password: 123456
+    username: superrd
+    password: superrd
   cloud:
     config:
       server:
         git:
-          uri: 'https://git.oschina.net/believecs/SpringcloudConfig'
+          uri: 'https://gitee.com/lhhxb/SpringcloudConfig'
         #  uri: 'https://github.com/FurionCS/SpringcloudConfig'
           search-paths: 'shop'
-        #   password: '##@'
-        #  username: '###'
+          password: '115599abc'
+          username: 'wuhanligong110'
       label: master
 encrypt:
  # key: '*&3loa#@9no_0*(!'
@@ -32,12 +32,12 @@ encrypt:
     alias: mytestkey
     secret: changeme
 
-#security:
-#  basic:
-#    enabled: true
-#  user:
-#    name: cs
-#    password: 123456
+security:
+  basic:
+   enabled: true
+  user:
+    name: cs
+    password: 123456
 management:
   security:
     enabled: false
