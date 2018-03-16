@@ -1,12 +1,12 @@
 package com.spring.web;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.spring.common.model.response.ObjectDataResponse;
 import com.spring.domain.Order;
 import com.spring.domain.User;
 import com.spring.domain.request.CancelRequest;
 import com.spring.domain.request.PaymentRequest;
 import com.spring.domain.request.PlaceOrderRequest;
-
 import com.spring.service.OrderService;
 import com.spring.web.client.UserClient;
 import io.swagger.annotations.ApiOperation;
@@ -39,6 +39,7 @@ public class OrderController {
 
     @ApiOperation(value="获得所有订单列表")
     @RequestMapping(value="listOrder",method = RequestMethod.GET)
+    @HystrixCommand
     public ObjectDataResponse listOrder(){
         List<Order> lo=orderService.listOrder();
         return new ObjectDataResponse(lo);

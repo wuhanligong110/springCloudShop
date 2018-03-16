@@ -1,11 +1,11 @@
 package com.spring.web;
 
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.spring.common.model.StatusCode;
 import com.spring.common.model.response.ObjectDataResponse;
 import com.spring.domain.Product;
 import com.spring.domain.request.ProductUpdateRequest;
-
 import com.spring.service.ProductService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +32,7 @@ public class ProductController {
 
     @ApiOperation(value="添加产品")
     @PostMapping(value="/addProduct")
+    @HystrixCommand
     public ObjectDataResponse addProduct(@Validated @RequestBody Product product, BindingResult result){
         product.setCreateTime(new Date());
         productService.addProduct(product);
@@ -40,6 +41,7 @@ public class ProductController {
 
     @ApiOperation("更新产品信息")
     @PostMapping("/updateProduct")
+    @HystrixCommand
     public ObjectDataResponse updateProduct(@Validated @RequestBody ProductUpdateRequest productUpdateRequest,BindingResult result){
         int flag=productService.updateProduct(productUpdateRequest);
         if(flag==0){

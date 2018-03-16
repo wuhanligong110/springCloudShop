@@ -11,7 +11,7 @@ spring:
       fail-fast: true
       username: cs
       password: 123456
-      profile: dev
+      profile: devc
       label: master
 eureka:
   client:

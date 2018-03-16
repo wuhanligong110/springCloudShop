@@ -26,7 +26,7 @@ public interface UserClient {
      * @param userId
      * @return
      */
-    @RequestMapping(value="getUserById",method = RequestMethod.GET)
+    @RequestMapping(value="/user/getUserById",method = RequestMethod.GET)
     ObjectDataResponse<User> getUserById(@RequestParam("userId") Integer userId);
 
     /**

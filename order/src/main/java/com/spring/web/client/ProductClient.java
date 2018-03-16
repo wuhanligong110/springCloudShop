@@ -25,7 +25,7 @@ public interface ProductClient {
      * @param productId
      * @return
      */
-    @RequestMapping(value = "getProductById",method = RequestMethod.GET)
+    @RequestMapping(value = "/product/getProductById",method = RequestMethod.GET)
     ObjectDataResponse<Product> getProductById(@RequestParam("productId") Integer productId);
 
     /**

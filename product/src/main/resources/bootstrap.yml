@@ -11,7 +11,7 @@ spring:
       fail-fast: true
       username: cs
       password: 123456
-      profile: dev
+      profile: devc
       label: master
 eureka:
   client:
@@ -23,3 +23,7 @@ management:
 mybatis:
   mapper-locations: 'classpath*:mapper/**/*Mapper.xml'
   type-aliases-package: 'com.spring.domain.model'
+hystrix:
+  config:
+    stream:
+      maxConcurrentConnections: 50
